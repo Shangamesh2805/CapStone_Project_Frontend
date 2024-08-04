@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+}
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.profile-card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 40px;
+    width: 700px; /* Adjusted for a more compact, classic feel */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+}
+
+.profile-card img.profile-pic {
+    width: 150px; /* Increased size for a more prominent display */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 5px solid #4CAF50; /* Added border for a more defined look */
+}
+
+.profile-card h2 {
+    margin: 15px 0;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.profile-card p {
+    margin: 10px 0;
+    color: #555;
+    font-size: 18px;
+}
+
+.profile-card p strong {
+    color: #333;
+}
+
+.profile-card .profile-info {
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.profile-card .profile-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #777;
+}
+
+.profile-card .profile-info p strong {
+    color: #4CAF50;
+}
+.logout-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+    font-size: 16px;  
+    transition: background-color 0.3s;  
+}
+
+.logout-button:hover {
+    background-color: #45a049; 
+}

@@ -17,6 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     .then(response => response.json())
     .then(data => {
         if (data.$values) {
+             
+            const customerID = data.$values[0]?.customerID;
+            if (customerID) {
+                localStorage.setItem("customerID", customerID);
+            }
+
             data.$values.forEach(policy => {
                 const expiryDate = new Date(policy.expiryDate);
                 const today = new Date();
@@ -50,11 +56,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     <p>CustomerPolicy ID: ${policy.customerPolicyID}</p>
                     <p>Status: <span style="color: ${statusColor}">${status}</span></p>
                     <p>Expiry Date: ${expiryDate.toLocaleDateString()}</p>
-                    <p>Policy ID:${policy.policyID}</p>
+                    <p>Policy ID: ${policy.policyID}</p>
                     <button onclick="viewPolicyDetails('${policy.customerPolicyID}')">View Details</button>
-                    <button onclick="raiseClaim('${policy.customerPolicyID}')">Raise Claim</button>
+                    ${status === "Active" ? `<button onclick="raiseClaim('${policy.customerPolicyID}')">Raise Claim</button>` : ''}
+                    ${status === "Expiring Soon" || (daysToExpiry <= 0 && Math.abs(daysToExpiry) <= 30) ? `<button onclick="renewPolicy('${policy.customerPolicyID}', '${policy.policyID}')">Renewal</button>` : ''}
                     ${status === "Revival Available" ? `<button onclick="revivalPolicy('${policy.customerPolicyID}')">Revival</button>` : ''}
-                    ${status === "Active" || status === "Expiring Soon" ? `<button onclick="renewPolicy('${policy.customerPolicyID}', '${policy.policyID}')">Renewal</button>` : ''}
                 `;
                 policiesContainer.appendChild(policyCard);
             });

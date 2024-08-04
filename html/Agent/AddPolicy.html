@@ -69,7 +69,7 @@
     </div>
 
     <script>
-      // Check login status and update navbar
+      
       const token = localStorage.getItem("token");
       const role = localStorage.getItem("role");
       if (token && role === "Agent") {
@@ -84,7 +84,7 @@
             `);
       }
 
-      // Logout functionality
+      
       $("#logout").click(() => {
         localStorage.clear();
         window.location.href = "../../html/Auth/login.html";

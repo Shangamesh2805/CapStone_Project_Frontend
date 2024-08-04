@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        // Fetch all policies
+         
         const response = await fetch('http://localhost:5104/api/InsurancePolicy/GetAllPolicies', {
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const data = await response.json();
         const policies = data.$values || [];
 
-        // Render policies
+         
         if (policies.length === 0) {
             policiesContainer.innerHTML = '<p>No available policies.</p>';
         } else {
@@ -41,13 +41,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 `;
                 policiesContainer.appendChild(policyCard);
 
-                // Handle Details button click
+                
                 policyCard.querySelector('.details').addEventListener('click', () => {
                     localStorage.setItem('policyId', policy.policyID);
                     window.location.href = '../../html/Customer/policy-details.html';
                 });
 
-                // Handle Apply button click
+                 
                 policyCard.querySelector('.apply').addEventListener('click', () => {
                     if (confirm('Are you sure you want to apply for this policy?')) {
                         applyForPolicy(policy.policyID);

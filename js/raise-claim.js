@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const token = localStorage.getItem("token");
-    // const customerPolicyIDField = document.getElementById("customerPolicyID");
+    
     const customerPolicyID = localStorage.getItem("selectedPolicyID");
-    //console.log('selectedPolicyID',customerPolicyID);
+   
     
     
     if (!token || !customerPolicyID) {
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    // customerPolicyIDField.value = policyID;
+    
 
     const claimForm = document.getElementById("claimForm");
     claimForm.addEventListener("submit", function (e) {
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             console.log("Response Data:", data);
             alert(data.message);
-            window.location.href = "../../html/Customer/view-claims.html"; 
+            window.location.href = "../../html/Customer/My-Policies.html"; 
         })
         .catch(error => {
             console.error("Error raising claim:", error);

@@ -51,7 +51,7 @@ main {
     width: 100%;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the cards */
+    align-items: center;  
 }
 
 .revival-card {
@@ -64,7 +64,7 @@ main {
     text-align: left;
     width: 100%;
     box-sizing: border-box;
-    max-width: 600px; /* Ensure cards fit within the container */
+    max-width: 600px;  
 }
 
 .revival-card h3 {

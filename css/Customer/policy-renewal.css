@@ -4,7 +4,7 @@ body, html {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #c2d6f4; /* Optional: to add a background color to the whole page */
+    background-color: #c2d6f4;  
 }
 
 .container {

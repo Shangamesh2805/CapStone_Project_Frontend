@@ -52,7 +52,7 @@ nav {
 }
 
 .container {
-  margin-top: 80px; /* Offset for fixed header */
+  margin-top: 80px;  
   padding: 2rem;
   max-width: 800px;
   margin-left: auto;

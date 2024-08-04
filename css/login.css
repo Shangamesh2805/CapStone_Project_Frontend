@@ -1,4 +1,4 @@
-/* General styles */
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -52,7 +52,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 80px; /* Offset for fixed header */
+  padding-top: 80px; 
   background: rgb(0, 86, 179);
   background: linear-gradient(
     0deg,

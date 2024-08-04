@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        // Fetch all claims
+         
         const response = await fetch('http://localhost:5104/api/Claim', {
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const data = await response.json();
         const claims = data.$values || [];
 
-        // Filter pending claims and render them
+      
         const pendingClaims = claims.filter(claim => claim.claimStatus === 'Pending');
         if (pendingClaims.length === 0) {
             claimsContainer.innerHTML = '<p>No pending claims.</p>';
@@ -37,13 +37,13 @@ document.addEventListener('DOMContentLoaded', async () => {
                 `;
                 claimsContainer.appendChild(claimCard);
 
-                // Approve claim
+                 
                 claimCard.querySelector('.approve').addEventListener('click', async () => {
                     await updateClaimStatus(claim.claimID, 'approve');
                     claimCard.remove();
                 });
 
-                // Reject claim
+                 
                 claimCard.querySelector('.reject').addEventListener('click', async () => {
                     await updateClaimStatus(claim.claimID, 'reject');
                     claimCard.remove();
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// Function to update claim status
+ 
 async function updateClaimStatus(claimID, action) {
     const token = localStorage.getItem('token');
     const url = `http://localhost:5104/api/Agent/Claim-${claimID}/${action}`;

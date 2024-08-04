@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        // Fetch policy details
+         
         const response = await fetch(`http://localhost:5104/api/InsurancePolicy/Get/${policyId}`, {
             headers: {
                 'Authorization': `Bearer ${token}`,
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         const policy = await response.json();
 
-        // Render policy details
+         
         policyDetailsContainer.innerHTML = `
             <h2>${policy.policyName}</h2>
             <p><strong>Policy Number:</strong> ${policy.policyNumber}</p>
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             <p><strong>Description:</strong> ${policy.description || 'No description available.'}</p>
         `;
 
-        // Handle Apply button click
+        
         document.getElementById('apply-button').addEventListener('click', () => {
             if (confirm('Are you sure you want to apply for this policy?')) {
                 applyForPolicy(policy.policyID);
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-// Function to apply for a policy
+ 
 async function applyForPolicy(policyID) {
     const token = localStorage.getItem('token');
     const applyPolicyUrl = 'http://localhost:5104/api/CustomerPolicy/ApplyPolicy';

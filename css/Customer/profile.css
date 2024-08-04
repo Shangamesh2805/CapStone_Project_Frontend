@@ -6,19 +6,12 @@ body {
 }
 
 
-
-
-
-
-
-
-
 nav ul li a:hover {
     background-color: #fffafa;
 }
 
 .container {
-    padding: 20px;
+    padding: 100px;
 }
 
 h1 {
