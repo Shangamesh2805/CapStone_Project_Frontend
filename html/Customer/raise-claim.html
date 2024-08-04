@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raise Claim</title>
+    <link rel="stylesheet" href="../../css/Customer/raise-claim.css">
+    <script src="../../js/raise-claim.js" defer></script>
+</head>
+<body>
+    <nav>
+        <ul class="nav-links" id="nav-links">
+            <li><a href="../Customer/index.html">Home</a></li>
+            <li><a href="register.html">Register</a></li>
+            <li><a href="../Customer/policy.html">Policies</a></li>
+            <li><a href="../Customer/MyPolicies.html">MyPolicies</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Raise a Claim</h1>
+        <form id="claimForm">
+            <input type="hidden" id="customerPolicyID" name="customerPolicyID"> <!-- Hidden field -->
+            <div class="form-group">
+                <label for="claimAmount">Claim Amount</label>
+                <input type="number" id="claimAmount" name="claimAmount" required>
+            </div>
+            <div class="form-group">
+                <label for="reason">Reason</label>
+                <textarea id="reason" name="reason" required></textarea>
+            </div>
+            <button type="submit">Submit Claim</button>
+        </form>
+    </div>
+</body>
+</html>

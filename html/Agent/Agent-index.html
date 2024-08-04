@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin-Agent Dashboard</title>
+    <link rel="stylesheet" href="../../css/Agent/agent.css">
+    <link rel="stylesheet" href="../../css/Customer/index.css">
+    <!-- Include jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../js/Agent/agent-index.js" defer></script>
+    
+
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Health Insurance</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../../html/Agent/agent-index.html">Home</a></li>
+                <li><a href="../../html/Agent/Claims.html">Claims</a></li>
+                <li><a href="../../html/Agent/AddPolicy.html">Add Policy</a></li>
+                
+                <li><a href="../../html/Agent/Agent-revivals.html">Revivals</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Welcome to the Admin-Agent Dashboard</h1>
+        <div class="cards">
+            <div class="card">
+                <h2>Manage Claims</h2>
+                <p>As an agent, you can manage and approve customer claims efficiently, ensuring a smooth process for our customers.</p>
+            </div>
+            <div class="card">
+                <h2>Add Policies</h2>
+                <p>Add and update insurance policies to keep our offerings competitive and comprehensive.</p>
+            </div>
+            <div class="card">
+                <h2>View Policies</h2>
+                <p>View all available policies and assist customers in choosing the right plan.</p>
+            </div>
+            <div class="card">
+                <h2>Handle Revivals</h2>
+                <p>Handle revivals of expired policies, ensuring customers are informed and supported through the process.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+           
+            const token = localStorage.getItem('token');
+            const role = localStorage.getItem('role');
+            if (token && role === 'Agent') {
+                $('#nav-links').append(`
+                    <li><a href="#" id="logout">Logout</a></li>
+                `);
+            } else {
+                $('#nav-links').append(`
+                    <li><a href="../../html/login.html">Login</a></li>
+                    <li><a href="../../html/register.html">Register</a></li>
+                `);
+            }
+
+            
+            $('#logout').click(() => {
+                localStorage.clear();
+                window.location.href = '../../html/login.html';
+            });
+        });
+    </script>
+</body>
+</html>

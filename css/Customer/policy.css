@@ -1,0 +1,120 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #ddd;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    color: #fffafa;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff5f5;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.container {
+    margin-top: 80px; /* Offset for fixed header */
+    padding: 2rem;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.policy-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.policy-details {
+    flex: 1;
+}
+
+.policy-details h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.policy-details p {
+    margin: 0.5rem 0;
+}
+
+.policy-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.policy-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.policy-actions button.details {
+    background-color: #007BFF;
+    color: white;
+}
+
+.policy-actions button.details:hover {
+    background-color: #0056b3;
+}
+
+.policy-actions button.apply {
+    background-color: #28a745;
+    color: white;
+}
+
+.policy-actions button.apply:hover {
+    background-color: #218838;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Health Insurance</title>
+    <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo" style="color: white;font-size: larger; font-weight: 900;">Health Insurance</div>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../html/Customer/index.html">Home</a></li>
+                <li><a href="../html/Customer/AboutUs.html">About</a></li>
+                <li><a href="../html/Customer/policy.html">Policies</a></li>
+                <li><a href="../html/login.html">Login</a></li>
+                <li><a href="../html/register.html">Register</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="form-container">
+            <h2>Login</h2>
+            <form id="login-form">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="register.html">Sign Up</a></p>
+        </section>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+    <script src="../js/index.js"></script>
+</body>
+</html>

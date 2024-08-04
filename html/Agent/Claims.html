@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claims</title>
+    <link rel="stylesheet" href="../../css/Agent/claims.css">
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="../../js/claims.js" defer></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../../html/Agent/agent-index.html">Home</a></li>
+                <li><a href="../../html/Agent/Claims.html">Claims</a></li>
+                <li><a href="../../html/Agent/AddPolicy.html">Add Policy</a></li>
+                <li><a href="../../html/Agent/Agent-revivals.html">Revivals</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Pending Claims</h1>
+        <div id="claims-container"></div>
+    </div>
+
+    <script>
+        
+        const token = localStorage.getItem('token');
+        const role = localStorage.getItem('role');
+        if (token && role === 'Agent') {
+            $('#nav-links').append(`
+                <li><a href="../../html/Agent/agent-profile.html">Profile</a></li>
+                <li><a href="#" id="logout">Logout</a></li>
+            `);
+        } else {
+            $('#nav-links').append(`
+                <li><a href="../../html/login.html">Login</a></li>
+                <li><a href="../../html/register.html">Register</a></li>
+            `);
+        }
+
+       
+        $('#logout').click(() => {
+            localStorage.clear();
+            window.location.href = '../../html/login.html';
+        });
+    </script>
+</body>
+</html>

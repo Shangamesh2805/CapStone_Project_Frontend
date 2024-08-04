@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+
+
+
+
+
+
+
+
+nav ul li a:hover {
+    background-color: #fffafa;
+}
+
+.container {
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#policiesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.logo {
+    color: #fffafa;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.policy-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.policy-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.policy-card h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.policy-card p {
+    margin: 5px 0;
+}
+
+.policy-card button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+.policy-card button:hover {
+    background-color: #0056b3;
+}
+
+.policy-card span {
+    font-weight: bold;
+}
+
+.expiring-soon {
+    border-color: #ffa500;
+    box-shadow: 0 0 15px #ffa500;
+    animation: glow 1s infinite alternate;
+}
+
+.expired {
+    border-color: #ff0000;
+    box-shadow: 0 0 15px #ff0000;
+    animation: glow-red 1s infinite alternate;
+}
+
+.revival-available {
+    border-color: #800080;
+    box-shadow: 0 0 15px #800080;
+    animation: glow-purple 1s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0 0 5px #ffa500;
+    }
+    to {
+        box-shadow: 0 0 15px #ffa500;
+    }
+}
+
+@keyframes glow-red {
+    from {
+        box-shadow: 0 0 5px #ff0000;
+    }
+    to {
+        box-shadow: 0 0 15px #ff0000;
+    }
+}
+
+@keyframes glow-purple {
+    from {
+        box-shadow: 0 0 5px #800080;
+    }
+    to {
+        box-shadow: 0 0 15px #800080;
+    }
+}
