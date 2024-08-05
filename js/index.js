@@ -4,12 +4,13 @@ $(document).ready(function() {
         e.preventDefault();
 
         const email = $('#email').val();
-        const password = $('#password').val();  
+        const password = $('#password').val();
+        
         $.ajax({
             url: 'http://localhost:5104/api/Auth/login',
             type: 'POST',
             contentType: 'application/json',
-            data: JSON.stringify({ email: email, password: password }),  
+            data: JSON.stringify({ email: email, password: password }),
             success: function(response) {
                 alert('Login successful!');
                 localStorage.setItem('isLoggedIn', 'true');
@@ -17,7 +18,6 @@ $(document).ready(function() {
                 localStorage.setItem('userId', response.userId);
                 localStorage.setItem('role', response.role);
 
-                 
                 if (response.role === 'Agent') {
                     window.location.href = '../html/Agent/Agent-index.html';
                 } else {
@@ -26,6 +26,33 @@ $(document).ready(function() {
             },
             error: function(error) {
                 alert('Login failed: ' + error.responseText);
+            }
+        });
+    });
+
+   
+    $('#register-form').submit(function(e) {
+        e.preventDefault();  
+
+         
+        const username = $('#username').val();
+        const email = $('#email').val();
+        const password = $('#password').val();
+        const role = $('#role').val();
+
+         
+        $.ajax({
+            url: 'http://localhost:5104/api/Auth/register',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({ username, email, password, role }),
+            success: function(response) {
+                alert('Registration successful! Please login.');
+                
+                window.location.href = '../html/login.html';
+            },
+            error: function(error) {
+                alert('Registration failed: ' + error.responseText);
             }
         });
     });
@@ -40,18 +67,16 @@ $(document).ready(function() {
             <li><a href="../html/Customer/index.html">Home</a></li>
             <li><a href="../../html/Customer/AboutUs.html">About</a></li>
             <li><a href="../../html/Customer/policy.html">Policies</a></li>
-            <li><a href="../../html/Customer/MyPolicies.html">MyPolicies</a></li>
+            <li><a href="../../html/Customer/MyPolicies.html">My Policies</a></li>
             <li><a href="../../html/Customer/profile.html">Profile</a></li>
             <li><a href="#" id="logout">Logout</a></li>
         `);
 
-         
         $('#logout').click(function() {
             localStorage.clear();
             window.location.href = '../../html/login.html';
         });
     } else {
-         
         $('#nav-links').html(`
             <li><a href="../html/Customer/index.html">Home</a></li>
             <li><a href="../../html/Customer/AboutUs.html">About</a></li>

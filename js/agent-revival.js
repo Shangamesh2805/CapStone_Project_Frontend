@@ -1,10 +1,13 @@
 document.addEventListener('DOMContentLoaded', async () => {
+    const role = localStorage.getItem('role');
+    const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
     const revivalsContainer = document.getElementById('revivals-container');
     const noRevivalsMessage = document.getElementById('no-revivals-message');
     const token = localStorage.getItem('token');
 
-    if (!token) {
-        alert('You are not logged in. Please login to view revivals.');
+    // Check if the user is logged in and has the "Agent" role
+    if (!isLoggedIn || role !== 'Agent') {
+        alert('Access denied. Please log in as an Agent to view and manage revivals.');
         window.location.href = '../../html/login.html';
         return;
     }
@@ -17,6 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 'Content-Type': 'application/json'
             }
         });
+
         const data = await response.json();
         const revivals = data.$values || [];
 

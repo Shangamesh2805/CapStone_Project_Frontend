@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(data => {
             console.log("Response Data:", data);
             alert(data.message);
-            window.location.href = "../../html/Customer/My-Policies.html"; 
+            window.location.href = "../../html/Customer/MyPolicies.html"; 
         })
         .catch(error => {
             console.error("Error raising claim:", error);
